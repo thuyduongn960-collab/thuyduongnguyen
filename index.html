@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIỚI THIỆU BẢN THÂN - NOEL STYLE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --noel-red: #d42426;
+            --noel-green: #165b33;
+            --noel-white: #ffffff;
+            --text-black: #000000;
+        }
+
+        body {
+            /* THAY ĐỔI: Sử dụng link ảnh Noel mới làm nền toàn trang */
+            background: url('https://maytinhgiaphat.vn/wp-content/uploads/2025/09/hinh-nen-Noel-CareerBuilder-36.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-black);
+            overflow-x: hidden;
+            /* Tạo khoảng cách để không bị ảnh dưới cùng đè mất nội dung footer */
+            padding-bottom: 300px; 
+        }
+
+        /* Hiệu ứng mưa tuyết */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 9999;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+
+        header {
+            background-color: rgba(212, 36, 38, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--noel-green);
+            position: relative;
+        }
+
+        header::after {
+            content: "❄️ 🎄 🎁 ❄️";
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .intro-title {
+            font-size: 16px;
+            color: var(--text-black);
+            background: rgba(255, 255, 255, 0.85);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: var(--noel-green);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .santa-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid white;
+            object-fit: cover;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 16px;
+            margin: 0 10px;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: var(--noel-red);
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.97);
+            border: 3px solid var(--noel-green);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.4);
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        .section-divider::before {
+            content: "";
+            display: block;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--noel-red), transparent);
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            z-index: 1;
+        }
+        .section-divider span {
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 0 15px;
+            font-size: 24px;
+        }
+
+        h2 { font-size: 26px; font-weight: bold; border-bottom: 2px solid var(--noel-red); padding-bottom: 5px; margin-top: 20px; }
+        h3 { font-size: 20px; font-weight: bold; color: var(--noel-red); margin-top: 25px; }
+        h4 { font-size: 16px; font-weight: bold; color: var(--noel-green); }
+        .italic { font-style: italic; }
+        .book-img { width: 200px; display: block; margin: 15px 0; border-radius: 8px; border: 3px solid var(--noel-green); }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
+
+        footer { text-align: center; padding: 25px; background: var(--noel-green); color: white; margin-top: 50px; }
+
+        /* MỚI: Định dạng cho ảnh ở góc dưới cùng của web */
+        .bottom-decoration {
+            width: 100%;
+            max-width: 600px; /* Bạn có thể chỉnh kích thước tùy ý */
+            display: block;
+            margin: 20px auto 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+        }
+
+
+        /* CSS CHO ẢNH CUỐI TRANG CÓ HIỆU ỨNG ĐỘNG */
+        .bottom-decoration {
+            width: 90%;
+            max-width: 500px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            /* Gọi hiệu ứng animation */
+            animation: breathe 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        /* Định nghĩa hiệu ứng phóng to thu nhỏ nhẹ nhàng */
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); } /* Phóng to lên 8% */
+            100% { transform: scale(1); }
+        }
+
+        /* Hiệu ứng khi di chuột vào ảnh */
+        .bottom-decoration:hover {
+            animation-play-state: paused; /* Tạm dừng khi di chuột vào */
+            transform: scale(1.15) !important; /* Phóng to hơn một chút */
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--noel-green);
+            color: white;
+        }
+
+        /* Giữ nguyên các định dạng ảnh sách */
+        .book-img { width: 200px; display: block; margin: 15px 0; border-radius: 8px; border: 3px solid var(--noel-green); }
+        .italic { font-style: italic; }
+    </style>
+</head>
+<body>
+
+<script>
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '❄';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowflake.style.opacity = Math.random();
+        document.body.appendChild(snowflake);
+        setTimeout(() => { snowflake.remove(); }, 5000);
+    }
+    setInterval(createSnowflake, 150);
+
+</script>
+
+<header>
+    <h1>GIỚI THIỆU BẢN THÂN</h1>
+    <div class="intro-title">
+        Xin chào, tôi là Nguyễn Thùy Dương - lớp 12A4! Hy vọng bạn thích bài giới thiệu mùa Giáng Sinh này!
+    </div>
+</header>
+
+<nav>
+    <img src="https://file.hstatic.net/200000145261/file/hinh-anh-ong-gia-noel-dep-nhat-2020-4_d505a0245ded4a1a928081b01de69622_grande.jpg" class="santa-icon" alt="Ông già Noel">
+    <a href="#thong-tin">1. Thông tin</a>
+    <a href="#so-thich">2. Sở thích</a>
+    <a href="#hanh-trinh">3. Hành trình</a>
+    <a href="#muc-tieu">4. Mục tiêu</a>
+</nav>
+
+<div class="container">
+    <section id="thong-tin">
+        <h2 style="color: var(--noel-red);">1. Thông tin cơ bản</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li>👩: <b>Nguyễn Thùy Dương</b></li>
+            <li>📅: 20/06/2008</li>
+            <li>👩‍🎓: Học sinh/ Sinh viên</li>
+            <li>🏫: Trường THPT Hòn Gai</li>
+            <li>📍: Thành phố Hạ Long, Quảng Ninh, Việt Nam</li>
+            <li>🌐: <a href="mailto:thuyduongn960@gmail.com">thuyduongn960@gmail.com</a></li>
+            <li>🔢: 0944966969</li>
+            <li>👥: <a href="https://www.facebook.com/nguyen.thuy.duong.548709/" target="_blank">Facebook Profile</a></li>
+            <li>💪: Mức độ tỉnh táo phụ thuộc vào nồng độ Caffeine có trong máu</li>
+            <li class="italic">✍: "Ước gì cuộc sống cũng có phím Ctrl + Z, để mình lùi lại những lúc lỡ tay chọn nhầm đáp án bài thi."</li>
+        </ul>
+    </section>
+
+    <div class="section-divider"><span>🎄 🎁 🎄</span></div>
+
+    <section id="so-thich">
+        <h2 style="color: var(--noel-red);">2. Sở thích</h2>
+        
+        <h3>Đọc sách</h3>
+        <h4>Một số cuốn sách tâm đắc như:</h4>
+        
+        <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/tramnamcodon01-0ce89a31-455d-4492-b0ce-1f6329222273.jpg?v=1705552510463" alt="Trăm năm cô đơn" class="book-img">
+        <p class="italic">"Trăm năm cô đơn của đại văn hào Gabriel García Márquez là một kiệt tác thuộc chủ nghĩa hiện thực huyền ảo, kể về hành trình bảy thế hệ của dòng họ Buendía tại làng Macondo — từ lúc khai thiên lập địa cho đến khi bị xóa sổ bởi cơn gió lốc định mệnh. Qua những câu chuyện kỳ quái nhưng đầy tính nhân bản, mình cảm nhận được một nỗi cô độc tận cùng len lỏi trong dòng máu mỗi nhân vật, như một lời nhắc nhở sâu sắc rằng: không có tình yêu và sự kết nối chân thành, con người mãi mãi chỉ là những ốc đảo cô lập giữa dòng chảy tàn khốc của thời gian."</p>
+        
+        <hr>
+
+        <img src="https://tse2.mm.bing.net/th/id/OIP.H-Qa2DRSkL5IE9p5rkfcPAHaKR?pid=Api&P=0&h=220" alt="Hoàng tử bé" class="book-img">
+        <p class="italic">"Hoàng tử bé của nhà văn và phi công người Pháp Antoine de Saint-Exupéry là một câu chuyện ngụ ngôn vượt thời gian, bắt đầu từ cuộc gặp gỡ định mệnh giữa một phi công bị rơi máy bay trên sa mạc Sahara và một cậu bé đến từ tiểu tinh cầu B-612 xa xôi. Qua cuộc hành trình thăm thú các hành tinh và những cuộc trò chuyện với Cáo hay Hoa Hồng, tác phẩm đã bóc tách những góc nhìn ngây thơ nhưng đầy thông thái về tình yêu, tình bạn và trách nhiệm. Với mình, cuốn sách là một lời nhắc nhở dịu dàng rằng: 'Người ta chỉ có thể nhìn thấy rõ ràng bằng trái tim, những điều cốt lõi thì mắt thường không thể thấy được', giúp mình biết trân trọng những giá trị giản đơn giữa thế giới người lớn đầy phức tạp."</p>
+        
+        <hr>
+
+        <img src="https://tse1.mm.bing.net/th/id/OIP.-UxvGmopVIdNAY6ZvFAJ2QHaHa?pid=Api&P=0&h=220" alt="Không gia đình" class="book-img">
+        <p class="italic">"Không gia đình (Sans Famille) của văn hào người Pháp Hector Malot kể về cuộc đời ba chìm bảy nổi của cậu bé Rémi – một đứa trẻ bị bỏ rơi và sau đó được cụ già Vitalis nhân hậu nhận nuôi. Cùng với gánh xiếc rong gồm chú chó Capi khôn ngoan và chú khỉ Joli-Cœur lém lỉnh, Rémi đã đi khắp nước Pháp, nếm trải mọi đắng cay từ đói rét đến tù tội để rồi cuối cùng tìm lại được gia đình thực sự. Cuốn sách không chỉ là một hành trình phiêu lưu mạo hiểm mà còn là bài ca về lòng tự trọng, tinh thần vượt khó và tình người ấm áp. Qua Rémi, mình hiểu được rằng: dù trong hoàn cảnh khốn cùng nhất, nếu giữ vững trái tim lương thiện và lòng dũng cảm, chúng ta sẽ bao giờ bị khuất phục trước số phận."</p>
+
+        <h4>Đọc sách đã giúp mình:</h4>
+        <p><b>1. Rèn luyện tư duy sâu và sự kiên nhẫn</b><br>Trong thời đại của TikTok và những video ngắn, văn học cổ điển buộc chúng ta phải chậm lại. Những cuốn sách dày hàng trăm trang với hệ thống nhân vật phức tạp (như dòng họ Buendía) giúp não bộ rèn luyện khả năng tập trung cao độ và tư duy logic để kết nối các tình tiết. </p>
+        <p><b>2. Thấu hiểu tâm lý và trải nghiệm đa dạng cuộc sống</b><br>Văn học cổ điển là "bảo tàng" về tâm hồn con người. Qua những thăng trầm của nhân vật Rémi hay nỗi cô độc của Hoàng tử bé, tôi được sống thêm hàng trăm cuộc đời khác nhau. Điều này giúp học sinh chúng ta phát triển trí tuệ cảm xúc (EQ), biết thấu cảm và bao dung hơn với mọi người xung quanh. </p>
+        <p><b>3. Tiếp cận những giá trị triết học vượt thời gian</b><br>Tại sao những cuốn sách viết từ hàng trăm năm trước vẫn được đọc đến tận bây giờ? Vì chúng chứa đựng những câu hỏi "vĩnh cửu" về tình yêu, cái chết, hạnh phúc và ý nghĩa sự tồn tại. Những giá trị này giúp bạn xây dựng một nền tảng tư duy vững chắc, không bị cuốn theo những trào lưu hời hợt.</p>
+        <p><b>4. Làm giàu vốn từ và khả năng diễn đạt</b><br>Đây là lợi ích trực tiếp nhất. Các tác giả cổ điển là những bậc thầy về ngôn ngữ. Đọc họ giúp vốn từ vựng của bạn trở nên phong phú, cách hành văn súc tích và giàu hình ảnh hơn. Điều này cực kỳ có lợi cho việc viết lách, thuyết trình và ngay cả việc đặt tên cho các hàm hay biến khi lập trình (code).  </p>
+
+        <h3>Nghe nhạc</h3>
+        <p class="italic">"Âm nhạc với mình không chỉ là những giai điệu, mà là 'nguồn nhiên liệu' cho trí não. Mình đặc biệt 'vibe' với dòng Cloud Rap đầy không gian như Em đi đi hay uocgicoaynoiyeutoi – nơi ca từ và giai điệu hòa quyện tạo nên một sự bay bổng khó tả. Bên cạnh đó, những bản Ballad sâu lắng (e là không thể, dự báo hôm nay thời tiết mưa,..) và nhạc US-UK cũng luôn có sẵn trong danh sách phát của mình. Những bản nhạc này chính là 'liều thuốc' giúp mình giải tỏa căng thẳng sau những giờ gõ code căng thẳng, đồng thời tạo ra một không gian tập trung lý tưởng để cải thiện 200% năng suất học tập và làm việc."</p>
+
+        <p>Các bài hát mình đã đề cập: <a href="https://youtu.be/c51mP1MS7Hc?si=VMErPuFV-7Ud9Io5" target="_blank">em đi đi</a></p>
+        <p><a href="https://youtu.be/TkMBSbnj8hY?si=b7nmignkvC5-21Jo" target="_blank">uocgicoaynoiyeutoi</a></p>
+        <p><a href="https://youtu.be/stvWuowo1dU?si=3Zn_JJ3adhzseUtp" target="_blank">e là không thể</a></p>
+        <p><a href="https://youtu.be/heMYSOZoT3c?si=R8dSrUvQX5qHaEs3" target="_blank">dự báo hôm nay thời tiết mưa</a></p>
+        <p>Gần đây mình đang nghe playlist này: <a href="https://youtu.be/fwSspe8y__I?si=o0wgeRVgCLWJ06F7" target="_blank">youtube playlist</a></p>
+    </section>
+
+    <div class="section-divider"><span>❄️ 🔔 ❄️</span></div>
+
+    <section id="hanh-trinh">
+        <h2 style="color: var(--noel-red);">3. Hành trình tri thức và tư duy</h2>
+        
+        <p><b>Giai đoạn nền tảng – Khối A00 & Đội tuyển Hóa:</b></p>
+        <ul>
+            <li>Tự tin lựa chọn khối A00 (Toán, Lý, Hóa) làm nền tảng.</li>
+            <li>Từng là thành viên năng nổ trong đội tuyển Hóa học.</li>
+        </ul>
+
+        <p><b>IELTS – Quyết định từ bỏ đầy tiếc nuối:</b></p>
+        <ul>
+            <li>Đối mặt với áp lực song hành giữa đội tuyển và IELTS.</li>
+            <li>Quyết định: Tập trung cho chứng chỉ quốc tế.</li>
+            <li>Kết quả: IELTS dừng chân ở mức ổn định (mốc t9-t10/2026).</li>
+        </ul>
+
+        <p><b>Sự thay đổi tư duy – Từ Kinh tế sang Khối ngành Sức khỏe:</b></p>
+        <ul>
+            <li>Nhận ra ngành Kinh tế đang bão hòa và điểm chuẩn quá cao.</li>
+            <li>Ngành Y Dược xứng đáng để đầu tư và nằm trong tầm với.</li>
+            <li>Khao khát kiến thức chuyên môn để phụng dưỡng cha mẹ khi về già.</li>
+        </ul>
+
+        <p><b>Mục tiêu hiện tại – Chinh phục Đại học Dược Hà Nội (HUP):</b></p>
+        <video width="320" height="560" autoplay loop muted>
+          <source src="Download (21).mp4" type="video/mp4">
+        </video>
+        <ul>
+            <li>Quyết tâm theo đuổi ngành Dược tại HUP.</li>
+            <li>Lập kế hoạch học tập dài hạn, học cao lên chuyên môn.</li>
+        </ul>
+
+        <p><b>Tầm nhìn sự nghiệp – Trở về quê hương:</b></p>
+        <ul>
+            <li>Làm việc tại các bệnh viện công (Ví dụ: Bệnh viện Việt Tiệp, Hải Phòng).</li>
+            <li><a href="https://youtu.be/IXMaS7LUw3w?si=qkuhn_YL1OKwGKKr" target="_blank">Giới thiệu Bệnh viên Hữu nghị Việt Tiệp, Hải Phòng</a></li>
+            <li>Phát triển sự nghiệp song hành cùng việc chăm sóc gia đình.</li>
+        </ul>
+    </section>
+
+    <div class="section-divider"><span>🎅 ❄️ 🤶</span></div>
+
+    <section id="muc-tieu">
+        <h2 style="color: var(--noel-red);">4. Mục tiêu và ước mơ</h2>
+        
+        <h3>📍 Mục tiêu ngắn hạn (2025 - 2026)</h3>
+        <ul>
+            <li>Chinh phục HUP: Đặt chân vào Đại học Dược Hà Nội.</li>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlsGcybasigTEkQZhF53d9IJKrpGK4UuRGyg&s" alt="Đại học Dược Hà Nội" class="book-img">
+            <li>Hoàn thiện bản thân: Nâng điểm IELTS trước tháng 10/2026.</li>
+            <li>Cân bằng cuộc sống: Duy trì gu âm nhạc "chill" và đọc sách.</li>
+        </ul>
+
+        <h3>🚀 Tầm nhìn sự nghiệp (Dược sĩ tương lai)</h3>
+        <ul>
+            <li>Chuyên môn hóa: Học cao học để trở thành chuyên gia.</li>
+            <li>Cống hiến tại quê hương: Làm việc tại Bệnh viện Việt Tiệp.</li>
+            <li>Giá trị cốt lõi: Trở thành điểm tựa cho cha mẹ khi về già.</li>
+        </ul>
+
+        <h3>✨ Châm ngôn theo đuổi</h3>
+        <p class="italic" style="text-align: center;">"Thay vì chạy theo những con số ảo của thị trường kinh tế, mình chọn theo đuổi giá trị thực tiễn của ngành Dược. Đó không chỉ là một công việc, mà là cách mình chọn để bảo vệ những người mình yêu thương."</p>
+    </section>
+</div>
+
+<footer>
+    <p>🎄 Giáng Sinh An Lành - 2024 | Nguyễn Thùy Dương 12A4 ❄️</p>
+    <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2023/11/hinh-nen-giang-sinh-5.jpg" class="bottom-decoration" alt="Trang trí Noel dưới cùng">
+</footer>
+
+</body>
+</html>
